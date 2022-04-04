@@ -3,7 +3,7 @@ Projeto de estudos para testes de performance/carga/stress com [JMeter](https://
 
 -----------------------------------------
 ### O que este script faz?
-Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login) e [ViaCEP](https://viacep.com.br/)
+Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login) e [ViaCEP](https://viacep.com.br/).
 
 -----------------------------------------
 ### Ferramentas e uso da arquitetura
