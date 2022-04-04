@@ -16,13 +16,9 @@ Este script efetua alguns testes de performance nas APIs de teste do site do [Se
 ```
 ⌛ TestPlan
  └── ⚙️ ThreadGroup
-      ├─ 🔧 HTTP Cookie Manager
-      ├─ 🔧 HTTP Cache Manager
-      ├─ 📊 View Results Tree
-      └──📊 Aggregate Report
-  ├─ ⚙️ ThreadGroup
-      └── 🔧 User Defined Variables
-  └──🏢 HTTP(S) Test Script Recorder
+      ├─ 🔧 Acesso
+      ├─ 🔧 HTTP Header Manager
+      └──📊 View Results Tree
 ```
 
 -----------------------------------------
@@ -145,4 +141,6 @@ Path = usuarios
 11) Adicione *Thread Group > Add > Listener > View Results Tree*
 
 12) Clique no play para executar o script.
+
+Geralmente costuma-se verificar estas informações no resultado:
 
