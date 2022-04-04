@@ -3,7 +3,7 @@ Projeto de estudos para testes de performance/carga/stress com [JMeter](https://
 
 -----------------------------------------
 ### O que este script faz?
-Este script efetua alguns testes de performance nas APIs de teste do site do [ServeRest](https://front.serverest.dev/login).
+Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login) e [ViaCep](https://viacep.com.br/)
 
 -----------------------------------------
 ### Ferramentas e uso da arquitetura
@@ -15,14 +15,16 @@ Este script efetua alguns testes de performance nas APIs de teste do site do [Se
 
 ```
 ⌛ TestPlan
- └── ⚙️ ThreadGroup
-      ├─ 📊 View Results Tree
-      ├─ 🔧 Acesso
-          └── 📄 HTTP Header Manager
-      ├─  🔧 Criação de conta
-          └── 📄 HTTP Header Manager
-      ├─ 🔧 Login
-          └── 📄 HTTP Header Manager
+ └── 📊 View Results Tree
+       ├─ ⚙️ ServeRest
+           ├─ 🧪 Acesso
+               └── 🛠️ HTTP Header Manager
+           ├─  🧪 Criação de conta
+               └── 🛠️ HTTP Header Manager
+           ├─ 🧪 Login
+               └── 🛠️ HTTP Header Manager
+       ├─ ⚙️ ViaCep
+           └── 🧪 Consulta de CEP
 ```
 
 -----------------------------------------
@@ -167,4 +169,25 @@ Devemos também copiar o header da página, assim como fizemos para *Acesso*.
 15) Ao executar, os testes passarão.
 
 ![image](https://user-images.githubusercontent.com/3456363/161607068-4e9d5f1f-5428-4137-a3af-9951c45277ff.png)
+
+## Testando o ViaCep
+
+1) Crie um novo teste (Thread Group)
+
+2) Adicione *Add > Sampler > HTTP Request*
+
+3) Acesse o [ViaCep](https://viacep.com.br/), copie o endpoint informado na página e preencha os campos:
+```
+Protocol = https
+Server Name or IP = viacep.com.br
+HTTP Request = GET
+Path = ws/01001000/json/
+```
+![image](https://user-images.githubusercontent.com/3456363/161609883-8644d6cd-3060-4f7c-b609-3996179bccef.png)
+
+4) Aninhe o *View Results Tree* abaixo de *Test Plan*, para que englobe o novo teste.
+
+5) Valide clicando com o botão direito no *Thread Group > Validate*
+
+
 
