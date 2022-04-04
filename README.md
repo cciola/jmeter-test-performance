@@ -3,7 +3,7 @@ Projeto de estudos para testes de performance/carga/stress com [JMeter](https://
 
 -----------------------------------------
 ### O que este script faz?
-Este script efetua alguns testes de performance nas APIs de teste do site do ServeRest.
+Este script efetua alguns testes de performance nas APIs de teste do site do [ServeRest](https://front.serverest.dev/login).
 
 -----------------------------------------
 ### Ferramentas e uso da arquitetura
@@ -27,7 +27,8 @@ Este script efetua alguns testes de performance nas APIs de teste do site do Ser
 
 -----------------------------------------
 ### Instalação (Windows)
-**JMeter**: 
+**JMeter**: Acessar o [site](https://jmeter.apache.org/), baixar o arquivo `.zip` binário na sessão "Binaries", descompactar em `C:\`, acessar `C:\apache-jmeter-5.3\apache-jmeter-5.3\lib` e executar **jmeter.bat**:
+
 
 **Plugins:** baixe o plugin desejado e coloque o arquivo `.jar` dentro da pasta `lib`, e também na pasta `lib > ext` do JMeter. Feche o Jmeter e abra novamente, para listar o plugin (acesse no botão "cocar" no canto superior direito).
 
