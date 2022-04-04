@@ -14,15 +14,15 @@ Este script efetua alguns testes de performance nas APIs de teste do site do Ser
 ### Arquitetura do projeto
 
 ```
-📂 TestPlan
- └── 📜 ThreadGroup
+⌛ TestPlan
+ └── ⚙️ ThreadGroup
       ├─ 🔧 HTTP Cookie Manager
       ├─ 🔧 HTTP Cache Manager
       ├─ 📊 View Results Tree
       └──📊 Aggregate Report
-  └── 📜 ThreadGroup
+  ├─ ⚙️ ThreadGroup
       └── 🔧 User Defined Variables
-  └──📜 HTTP(S) Test Script Recorder
+  └──🏢 HTTP(S) Test Script Recorder
 ```
 
 -----------------------------------------
