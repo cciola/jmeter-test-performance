@@ -48,6 +48,10 @@ Aqui também temos condições de controle para a execução destas requests.
 - **Delay Thread creation until needed**: define um delay entre cada iteração.
 - **Specify Thread lifetime**: especifica o tempo de vida de cada thread, ou seja, o tempo de execução/duração de cada cenário.
 
+É possível selecionar opções no Thread Group para o que fazer quando ocorrer um erro:
+
+*Action to be taken after a Sampler error: Continue, Start Next Thread Group, Stop Thread, Stop Test, Stop Test Now*
+
 ## Requisições
 *botão direito em Thread Group > Add*
 
@@ -91,3 +95,13 @@ No gráfico agregado temos:
 - **Sent kB/sec**: quantidade de kB enviados por segundo
 
 ![image](https://user-images.githubusercontent.com/3456363/161556128-13025c11-1d4c-4d8e-811e-dc65d7dbd236.png)
+
+## Aumentando a memória para execução do teste
+Ao clicar com o botão direito sobre o `jmeter.bat` e editando o código, é possível aumentar o valor de memória da nossa máquina:
+```
+if not defined HEAP (
+    rem See the unix startup file for the rationale of the following parameters,
+    rem including some tuning recommendations
+    set HEAP=-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m
+)
+```
