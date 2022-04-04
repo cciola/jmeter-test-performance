@@ -107,28 +107,44 @@ if not defined HEAP (
 ```
 
 ## Testando o ServRest
-No Test Plan, adicione:
+1) No *Test Plan*, adicione:
+```
+BASE_URL_1 = front.serverest.dev
+BASE_URL_2 = serverest.dev
+```
 
-- `BASE_URL_1` *front.serverest.dev*
-- `BASE_URL_2` *serverest.dev*
+2) Acesse o [ServeRest](https://front.serverest.dev/login)
 
-Acesse o [ServeRest](https://front.serverest.dev/login).
-Crie uma conta com perfil Admin
-Faça logoff
-Acesse novamente a página de login
-Tecle `F12`, faça login
-Acesse a request `usuarios` (aba Network)
+3) Crie uma conta com perfil Admin.
+
+4) Faça logoff, tecle `F12`, faça login
+
+5) Na aba `Network`, acesse a request `usuarios`
 
 ![image](https://user-images.githubusercontent.com/3456363/161571254-66ca81ad-a0fc-4c81-ad4f-5ad8a9c6b08a.png)
 
-Vamos adicionar no nosso *Thread Group > Add > Samples > HTTP Request*, informando:
-- Name `Acesso`
-- Protocolo `https`
-- Server Name or IP `${BASE_URL_2}`
-- HTTP Request `OPTIONS`
-- Path `usuarios`
+6) Adicione em *TestPlan > Thread Group*, desmarcando a opção **Specify Thread lifetime**
 
-Vamos adicionar em *Acesso > Add > Config Element > HTTP Header Manager*
+7) Adicione em *Thread Group > Add > Samples > HTTP Request*, informando:
+```
+Name = Acesso
+Protocolo = https
+Server Name or IP = ${BASE_URL_2}
+HTTP Request = OPTIONS
+Path = usuarios
+```
 
+8) Adicione *Acesso > Add > Config Element > HTTP Header Manager*
 
-- 
+9) Na página do ServRest, copie e cole os valores do bloco **Response Headers** do modo desenvolvedor da página, e cole na opção:
+
+![image](https://user-images.githubusercontent.com/3456363/161573607-459081ed-1a2a-41b1-b638-0f38d3a6c418.png)
+
+É importante informar os valores do Header, pois o script pode não entender que estamos requisitando de uma página web, podendo não executar corretamente.
+
+10) Em **Acesso**, marque a opção `Redirect Automatically` quando há dados de post para se seguir no próximo request.
+
+11) Adicione *Thread Group > Add > Listener > View Results Tree*
+
+12) Clique no play para executar o script.
+
