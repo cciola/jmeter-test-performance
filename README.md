@@ -27,11 +27,13 @@ Este script efetua alguns testes de performance nas APIs de teste do site do [Se
 
 -----------------------------------------
 ### Instalação (Windows)
-**JMeter**: Acessar o [site](https://jmeter.apache.org/), baixar o arquivo `.zip` binário na sessão "Binaries", descompactar em `C:\`, acessar `C:\apache-jmeter-5.3\apache-jmeter-5.3\lib` e executar **jmeter.bat**:
+**JMeter**: Acessar o [site](https://jmeter.apache.org/), baixar o arquivo `.zip` binário na sessão "Binaries":
 
+![image](https://user-images.githubusercontent.com/3456363/161556522-f16aa87d-0ab8-43c0-8a0d-8995ed9c4a44.png)
+
+Descompactar em `C:\`, acessar `C:\apache-jmeter-5.3\apache-jmeter-5.3\lib` e executar **jmeter.bat**:
 
 **Plugins:** baixe o plugin desejado e coloque o arquivo `.jar` dentro da pasta `lib`, e também na pasta `lib > ext` do JMeter. Feche o Jmeter e abra novamente, para listar o plugin (acesse no botão "cocar" no canto superior direito).
-
 
 ## Cenário de teste
 *botão direito em Test Plan > Add > Threads (Users) > Thread Group*
