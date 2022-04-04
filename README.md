@@ -188,3 +188,5 @@ Path = ws/01001000/json/
 5) Adicione um listener em *Thread Group > Add > Listener > Aggregate Report*
 
 6) Execute o teste.
+
+01:10
