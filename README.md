@@ -16,9 +16,9 @@ Este script efetua alguns testes de performance nas APIs de teste do site do [Se
 ```
 ⌛ TestPlan
  └── ⚙️ ThreadGroup
-      ├─ 🔧 Acesso
-      ├─ 🔧 HTTP Header Manager
-      └──📊 View Results Tree
+      ├─ 📊 View Results Tree
+      └── 🔧 Acesso
+          └── 🔧 HTTP Header Manager
 ```
 
 -----------------------------------------
@@ -143,4 +143,24 @@ Path = usuarios
 12) Clique no play para executar o script.
 
 Geralmente costuma-se verificar estas informações no resultado:
+
+![image](https://user-images.githubusercontent.com/3456363/161598477-512ed833-6c47-4e8a-986a-2e6c31e5b8cb.png)
+
+Podemos aninhar o *View Results Tree* no *Thread Group*, assim os testes ficam agrupados todos abaixo.
+
+13) Vamos duplicar o *Acesso* renomeando para *Criação de conta*, alterar o argumento para `POST`, copiar os dados do Payload da request de *usuarios* e colar na aba *BodyData*:
+
+![image](https://user-images.githubusercontent.com/3456363/161600195-9346b85a-e1b1-4220-a8e2-cdd75214321d.png)
+
+![image](https://user-images.githubusercontent.com/3456363/161600676-7f8d2c98-39ab-47d2-930e-2295050b59e0.png)
+
+Devemos também copiar o header da página, assim como fizemos para *Acesso*.
+
+14) Criaremos outro teste, *Login*, informando o *Path* `login`, copiando o Payload e o header correspondentes da página web.
+
+![image](https://user-images.githubusercontent.com/3456363/161607006-48270209-34f0-4437-a51c-3cbf73ee5ed7.png)
+
+15) Ao executar, os testes passarão.
+
+![image](https://user-images.githubusercontent.com/3456363/161607068-4e9d5f1f-5428-4137-a3af-9951c45277ff.png)
 
