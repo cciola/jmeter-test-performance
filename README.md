@@ -9,17 +9,17 @@ Este script efetua alguns testes de performance nas APIs de teste dos sites [Ser
 ### Arquitetura do projeto
 
 ```
-⌛ TestPlan
+🧪 TestPlan
  └── 📊 View Results Tree
        ├─ ⚙️ ServeRest
-           ├─ 🧪 Acesso
+           ├─ 🥍 Acesso
                └─ 🛠️ HTTP Header Manager
-           ├─ 🧪 Criação de conta
+           ├─ 🥍 Criação de conta
                └─ 🛠️ HTTP Header Manager
-           ├─ 🧪 Login
+           ├─ 🥍 Login
                └─ 🛠️ HTTP Header Manager
        ├─ ⚙️ ViaCEP
-           ├─ 🧪 Consulta de CEP
+           ├─ 🥍 Consulta de CEP
            └─ 📊 Aggregate Report
 ```
 
