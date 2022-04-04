@@ -87,3 +87,5 @@ No gráfico agregado temos:
 - **Throughput**: vazão
 - **Received kB/sec**: quantidade de kB recebidos por segundo
 - **Sent kB/sec**: quantidade de kB enviados por segundo
+
+![image](https://user-images.githubusercontent.com/3456363/161556128-13025c11-1d4c-4d8e-811e-dc65d7dbd236.png)
