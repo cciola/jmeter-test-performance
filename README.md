@@ -97,7 +97,7 @@ No gráfico agregado temos:
 ![image](https://user-images.githubusercontent.com/3456363/161556128-13025c11-1d4c-4d8e-811e-dc65d7dbd236.png)
 
 ## Aumentando a memória para execução do teste
-Ao clicar com o botão direito sobre o `jmeter.bat` e editando o código, é possível aumentar o valor de memória da nossa máquina:
+Ao clicar com o botão direito sobre o `jmeter.bat` e editando o código, é possível aumentar o valor de memória da nossa máquina na linha `set HEAP=-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m`:
 ```
 if not defined HEAP (
     rem See the unix startup file for the rationale of the following parameters,
@@ -105,3 +105,30 @@ if not defined HEAP (
     set HEAP=-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m
 )
 ```
+
+## Testando o ServRest
+No Test Plan, adicione:
+
+- `BASE_URL_1` *front.serverest.dev*
+- `BASE_URL_2` *serverest.dev*
+
+Acesse o [ServeRest](https://front.serverest.dev/login).
+Crie uma conta com perfil Admin
+Faça logoff
+Acesse novamente a página de login
+Tecle `F12`, faça login
+Acesse a request `usuarios` (aba Network)
+
+![image](https://user-images.githubusercontent.com/3456363/161571254-66ca81ad-a0fc-4c81-ad4f-5ad8a9c6b08a.png)
+
+Vamos adicionar no nosso *Thread Group > Add > Samples > HTTP Request*, informando:
+- Name `Acesso`
+- Protocolo `https`
+- Server Name or IP `${BASE_URL_2}`
+- HTTP Request `OPTIONS`
+- Path `usuarios`
+
+Vamos adicionar em *Acesso > Add > Config Element > HTTP Header Manager*
+
+
+- 
