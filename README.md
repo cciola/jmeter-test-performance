@@ -17,8 +17,12 @@ Este script efetua alguns testes de performance nas APIs de teste do site do [Se
 ⌛ TestPlan
  └── ⚙️ ThreadGroup
       ├─ 📊 View Results Tree
-      └── 🔧 Acesso
-          └── 🔧 HTTP Header Manager
+      ├─ 🔧 Acesso
+          └── 📄 HTTP Header Manager
+      ├─  🔧 Criação de conta
+          └── 📄 HTTP Header Manager
+      ├─ 🔧 Login
+          └── 📄 HTTP Header Manager
 ```
 
 -----------------------------------------
