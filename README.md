@@ -16,12 +16,12 @@ Este script efetua alguns testes de performance nas APIs de teste do site do Ser
 ```
 📂 TestPlan
  └── 📜 ThreadGroup
-      ├─ 📜 HTTP Cookie Manager
-      ├─ 📜 HTTP Cache Manager
-      ├─ 📜 View Results Tree
-      └──📜 Aggregate Report
+      ├─ 🔧 HTTP Cookie Manager
+      ├─ 🔧 HTTP Cache Manager
+      ├─ 📊 View Results Tree
+      └──📊 Aggregate Report
   └── 📜 ThreadGroup
-      └── 📜 User Defined Variables
+      └── 🔧 User Defined Variables
   └──📜 HTTP(S) Test Script Recorder
 ```
 
