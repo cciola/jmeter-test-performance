@@ -3,7 +3,7 @@ Projeto de estudos para testes de performance/carga/stress com [JMeter](https://
 
 -----------------------------------------
 ### O que este script faz?
-Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login) e [ViaCep](https://viacep.com.br/)
+Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login) e [ViaCEP](https://viacep.com.br/)
 
 -----------------------------------------
 ### Ferramentas e uso da arquitetura
@@ -18,13 +18,14 @@ Este script efetua alguns testes de performance nas APIs de teste dos sites [Ser
  └── 📊 View Results Tree
        ├─ ⚙️ ServeRest
            ├─ 🧪 Acesso
-               └── 🛠️ HTTP Header Manager
-           ├─  🧪 Criação de conta
-               └── 🛠️ HTTP Header Manager
+               └─ 🛠️ HTTP Header Manager
+           ├─ 🧪 Criação de conta
+               └─ 🛠️ HTTP Header Manager
            ├─ 🧪 Login
-               └── 🛠️ HTTP Header Manager
+               └─ 🛠️ HTTP Header Manager
        ├─ ⚙️ ViaCep
-           └── 🧪 Consulta de CEP
+           ├─ 🧪 Consulta de CEP
+           └─ 📊 Aggregate Report
 ```
 
 -----------------------------------------
@@ -170,9 +171,9 @@ Devemos também copiar o header da página, assim como fizemos para *Acesso*.
 
 ![image](https://user-images.githubusercontent.com/3456363/161607068-4e9d5f1f-5428-4137-a3af-9951c45277ff.png)
 
-## Testando o ViaCep
+## Testando o ViaCEP
 
-1) Crie um novo teste (Thread Group)
+1) Crie um novo teste (Thread Group), informando *Number of Threads* = 20, e um *Ramp-up* = 10.
 
 2) Adicione *Add > Sampler > HTTP Request*
 
@@ -185,9 +186,8 @@ Path = ws/01001000/json/
 ```
 ![image](https://user-images.githubusercontent.com/3456363/161609883-8644d6cd-3060-4f7c-b609-3996179bccef.png)
 
-4) Aninhe o *View Results Tree* abaixo de *Test Plan*, para que englobe o novo teste.
+4) Reposicione o *View Results Tree* abaixo de *Test Plan*, para que englobe o novo teste.
 
-5) Valide clicando com o botão direito no *Thread Group > Validate*
+5) Adicione um listener em *Thread Group > Add > Listener > Aggregate Report*
 
-
-
+6) Execute o teste.
