@@ -94,8 +94,6 @@ No gráfico agregado temos:
 - **Received kB/sec**: quantidade de kB recebidos por segundo
 - **Sent kB/sec**: quantidade de kB enviados por segundo
 
-![image](https://user-images.githubusercontent.com/3456363/161556128-13025c11-1d4c-4d8e-811e-dc65d7dbd236.png)
-
 ## Aumentando a memória para execução do teste
 Ao clicar com o botão direito sobre o `jmeter.bat` e editando o código, é possível aumentar o valor de memória da nossa máquina na linha `set HEAP=-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m`:
 ```
@@ -138,7 +136,7 @@ Path = usuarios
 
 9) Na página do ServRest, copie e cole os valores do bloco **Response Headers** do modo desenvolvedor da página, e cole na opção:
 
-![image](https://user-images.githubusercontent.com/3456363/161573607-459081ed-1a2a-41b1-b638-0f38d3a6c418.png)
+![image](https://user-images.githubusercontent.com/3456363/161592981-4378014d-04cd-4bbb-ae1f-61cdd543e53e.png)
 
 É importante informar os valores do Header, pois o script pode não entender que estamos requisitando de uma página web, podendo não executar corretamente.
 
