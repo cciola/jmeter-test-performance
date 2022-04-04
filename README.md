@@ -33,7 +33,7 @@ Este script efetua alguns testes de performance nas APIs de teste do site do [Se
 **Plugins:** baixe o plugin desejado e coloque o arquivo `.jar` dentro da pasta `lib`, e também na pasta `lib > ext` do JMeter. Feche o Jmeter e abra novamente, para listar o plugin (acesse no botão "cocar" no canto superior direito).
 
 
-### Cenário de teste
+## Cenário de teste
 *botão direito em Test Plan > Add > Threads (Users) > Thread Group*
 
 Dentro deste cenário vamos adicionar as requiições dos cenários a serem executados.
@@ -46,7 +46,7 @@ Aqui também temos condições de controle para a execução destas requests.
 - **Delay Thread creation until needed**: define um delay entre cada iteração.
 - **Specify Thread lifetime**: especifica o tempo de vida de cada thread, ou seja, o tempo de execução/duração de cada cenário.
 
-### Requisições
+## Requisições
 *botão direito em Thread Group > Add*
 
 Opções:
@@ -63,12 +63,12 @@ No "HTTP Cache manager" temos um número máximo de elementos em cache (5000). Q
 - **User Defined Variables**: aqui temos a opção de definir variáveis.
 **Observação**: para que esta opção seja acessível em todos os cenários, ela precisa estar aninhado no último Thread Group (de baixo para cima).
 
-### Opção de gravação do script de teste
+## Opção de gravação do script de teste
 *botão direto em Test Plan > Add > Non-Test Elements > HTTP(S) Test Script Recorder*
 
 Esta opção permite gravar uma navegação no browser (geralmente Firefox), a partir da porta informada. No exemplo temos a porta `8888`. Basta configurar esta mesma porta nas configurações do browser, e após dar um start, o JMeter já grava a navegação.
 
-### Visualizar os resultados da execução
+## Visualizar os resultados da execução
 *botão direto em Thread Group > Add > Listener > View Results Tree*
 *botão direto em Thread Group > Add > Listener > Aggregate Report*
 
