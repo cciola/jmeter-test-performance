@@ -3,7 +3,7 @@ Projeto de estudos para testes de performance/carga/stress com [JMeter](https://
 
 -----------------------------------------
 ### O que este script faz?
-Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login) e [ViaCEP](https://viacep.com.br/).
+Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login).
 
 -----------------------------------------
 ### Arquitetura do projeto
@@ -11,16 +11,14 @@ Este script efetua alguns testes de performance nas APIs de teste dos sites [Ser
 ```
 🧪 TestPlan
  └── 📊 View Results Tree
-       ├─ ⚙️ ServeRest
-           ├─ 🥍 Acesso
+ └── 📊 Aggregate Report
+       ├─ ⚙️ ServeRest (Thread Group)
+           ├─ 🥍 Acesso (HTTP Request)
                └─ 🛠️ HTTP Header Manager
-           ├─ 🥍 Criação de conta
+           ├─ 🥍 Criação de conta (HTTP Request)
                └─ 🛠️ HTTP Header Manager
-           ├─ 🥍 Login
+           ├─ 🥍 Login (HTTP Request)
                └─ 🛠️ HTTP Header Manager
-       ├─ ⚙️ ViaCEP
-           ├─ 🥍 Consulta de CEP
-           └─ 📊 Aggregate Report
 ```
 
 -----------------------------------------
@@ -87,6 +85,7 @@ Esta opção permite gravar uma navegação no browser (geralmente Firefox), a p
 
 ## Visualizar os resultados da execução
 *botão direto em Thread Group > Add > Listener > View Results Tree*
+
 *botão direto em Thread Group > Add > Listener > Aggregate Report*
 
 No gráfico agregado temos:
