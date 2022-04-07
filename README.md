@@ -231,15 +231,18 @@ Os valores podem ser obtidos de duas formas:
 **Observação**: todos os valores tem sempre que estar na mesma base decimal para o cálculo dar certo.
 
 ## Blazemeter
+Efetue login no plugin do Blazementer, pois somente é possível salvar o script logado. 
+
 Após o login, o Blazemeter exibe o usuário na extensão (canto superior direito).
 
-Informe o nome do teste e clique no botão para gravar.
+1) Informe o nome do teste e clique no botão para gravar.
+2) Acesse um site e aguarde o Blazemeter abrir o modal.
+3) Informe o nome do passo do teste **antes** de executar uma ação ou acessar alguma página, para sabermos depois em qual página estamos.
+4) A cada página acessada/passo efetuado, vá informano o nome do passo no Blazemeter.
 
-Acesse um site e aguarde o Blazemeter abrir o modal:
+Após navegar para fazer o teste, dar um stop na gravação. Clique no botão "Save..." e selecione a opção `JMeter (JMX)`.
 
-Após navegar para fazer o teste, dar um stop na gravação. Clique no botão "Save..." e selecione a opção `JMeter (JMX)`. 
-
-O Blazemeter lista todos os endpoints que conseguiu capturar. Selecione os endpoints desejados e clique em "Save(1)". O Blazemeter vai exportar o arquivo com a gravação do teste.
+O Blazemeter lista todos os endpoints que conseguiu capturar. Selecione os endpoints desejados e clique em "Save (1)". O Blazemeter vai exportar o arquivo com a gravação do teste, para a pasta Downloads.
 
 Abra no JMeter (File > Open) o arquivo *.jmx* gerado no Blazemeter, para ver o que foi gerado. É importante sempre informar os labels dos steps durante a gravação do teste, para nos localizarmos melhor quando abrir a gravação no JMeter.
 
