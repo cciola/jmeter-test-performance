@@ -246,6 +246,34 @@ O Blazemeter lista todos os endpoints que conseguiu capturar. Selecione os endpo
 
 Abra no JMeter (File > Open) o arquivo *.jmx* gerado no Blazemeter, para ver o que foi gerado. É importante sempre informar os labels dos steps durante a gravação do teste, para nos localizarmos melhor quando abrir a gravação no JMeter.
 
+## Importação de dados utilizando planilha CSV
+Vamos consumir o valor do CEP de um arquivo .csv que contém uma massa de teste.
+
+Inclua o item *CSV Data Set Config* clicando com o botão direito no teste (ADD > Config Element > CSV Data Set Config), e ordene-o para ficar como último item do teste.
+
+No campo `Filename`, vamos selecionar um arquivo .csv que contém a massa de dados pronta, lembrando que é necessário remover todo o caminho do arquivo, deixando apenas o nome do arquivo+extensão. Assim, o arquivo pode ser executado em qualquer lugar que tiver o script e o arquivo .csv, sem a necessidade de informar o caminho específico.
+
+**Observação:** importante que, antes do teste, o arquivo .csv seja salvo com as células dos dados do CEP com o tipo **Texto**, para poder interpretar os zeros corretamente no JMeter.
+
+![image](https://user-images.githubusercontent.com/3456363/162196476-7e10639e-9cb6-48bf-a44a-8e6ac6cb424e.png)
+
+Onde: prefixo,sufixo (00000,000)
+
+Configurar conforme abaixo:
+
+- **Filename**: deixar apenas o nome do arquivo, apagar o caminho
+- **Variable Names (comma-delimited)**: prefixo,sufixo
+- **Ignore first line (only used if Variable Names is not empty)**: False
+- **Delimiter (use '\t' for tab)**: ,
+- **Allow quoted data?**: False (apenas utilizado como true se dentro de algum dos campos/variáveis há algum caractere especial; é bem difícil setar como true)
+- **Recycle on EOF?**: True (quando chegar no fim do arquivo, volta para a primeira linha e continua reutilizando a massa. Se tivermos problema em reutilizar a massa, aí marcamos como true). Exemplo: se temos uma massa de apenas 50 CEPs e queremos fazer um teste com 100 VUs, podemos marcar esta opção para reutilizar os 50 itens novamente.
+- **Stop thread on EOF?**: False (não preciso que pare quando chegar ao final do arquivo)
+- **Sharing mode**: All threads (disponibilidade da massa para todas as threads)
+
+Indique no endpoint da chamada do CEP, os parâmetros `${sufixo}` e `${prefixo}`, em substituição aos valores fixos, para obter os valores do arquivo .CSV.
+
+Vamos configurar para agrupar as execuções, marcando a opção *Generate parent sample* para as threads, para não ficar listando linha a linha em cada execução.
+
 ## Links úteis para testar performance
 
 - https://reqres.in/
