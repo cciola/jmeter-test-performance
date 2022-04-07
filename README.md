@@ -185,7 +185,7 @@ Devemos também copiar o header da página, assim como fizemos para *Acesso*.
 
 2) Adicione *Add > Sampler > HTTP Request*
 
-3) Acesse o [ViaCep](https://viacep.com.br/), copie o endpoint informado na página e preencha os campos:
+3) Acesse o [ViaCEP](https://viacep.com.br/), copie o endpoint informado na página e preencha os campos:
 ```
 Protocol = https
 Server Name or IP = viacep.com.br
@@ -232,11 +232,10 @@ Os valores podem ser obtidos de duas formas:
 
 ## Links úteis para testar performance
 
-https://reqres.in/
-https://epic.gsfc.nasa.gov/about/api  
-https://swapi.dev/
-https://explore.postman.com/  
-https://developer.marvel.com/
-https://pokeapi.co/
-https://rapidapi.com/
-
+- https://reqres.in/
+- https://epic.gsfc.nasa.gov/about/api  
+- https://swapi.dev/
+- https://explore.postman.com/  
+- https://developer.marvel.com/
+- https://pokeapi.co/
+- https://rapidapi.com/
