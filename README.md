@@ -31,9 +31,9 @@ Este script efetua alguns testes de performance nas APIs de teste dos sites [Ser
 
 Descompacte em `C:\`, acessar `C:\apache-jmeter-5.3\apache-jmeter-5.3\lib` e execute **jmeter.bat**:
 
-**Plugins:** acesse o [site de plugins do JMeter](https://jmeter-plugins.org/),baixe o plugin desejado e coloque o arquivo `.jar` dentro da pasta `lib`, e também na pasta `lib > ext` do JMeter. 
+**Plugins:** acesse o [site de plugins do JMeter](https://jmeter-plugins.org/),baixe o plugin desejado e coloque o arquivo `.jar` dentro da pasta `lib`, e também na pasta `lib > ext` do JMeter. Para que o novo plugin seja listado, feche o Jmeter e abra novamente (acesse no botão "cocar" no canto superior direito).
 
-para que o novo plugin seja listado, feche o Jmeter e abra novamente (acesse no botão "cocar" no canto superior direito).
+**Blazemeter:** instalar a extensão Blazementer no Chome, [acessar este site](https://auth.blazemeter.com/auth/realms/blazect/protocol/saml/clients/blazemeter) e se cadastrar/fazer login.
 
 ## Testes de performance
 *“A eficiência da performance (ou simplesmente desempenho) é uma parte essencial de fornecer uma boa experiência aos usuários quando eles usam seus aplicativos em uma variedade de plataformas fixas e móveis.”* (CTFL-PT Performance Testing – 2018br)
@@ -229,6 +229,19 @@ Os valores podem ser obtidos de duas formas:
 ```
 
 **Observação**: todos os valores tem sempre que estar na mesma base decimal para o cálculo dar certo.
+
+## Blazemeter
+Após o login, o Blazemeter exibe o usuário na extensão (canto superior direito).
+
+Informe o nome do teste e clique no botão para gravar.
+
+Acesse um site e aguarde o Blazemeter abrir o modal:
+
+Após navegar para fazer o teste, dar um stop na gravação. Clique no botão "Save..." e selecione a opção `JMeter (JMX)`. 
+
+O Blazemeter lista todos os endpoints que conseguiu capturar. Selecione os endpoints desejados e clique em "Save(1)". O Blazemeter vai exportar o arquivo com a gravação do teste.
+
+Abra no JMeter (File > Open) o arquivo *.jmx* gerado no Blazemeter, para ver o que foi gerado. É importante sempre informar os labels dos steps durante a gravação do teste, para nos localizarmos melhor quando abrir a gravação no JMeter.
 
 ## Links úteis para testar performance
 
