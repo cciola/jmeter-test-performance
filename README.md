@@ -3,10 +3,10 @@ Projeto de estudos para testes de performance/carga/stress com [JMeter](https://
 
 -----------------------------------------
 ### O que este script faz?
-Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login).
+Este script efetua alguns testes de performance nas APIs de teste dos sites [ServeRest](https://front.serverest.dev/login) e [ViaCEP](https://viacep.com.br)
 
 -----------------------------------------
-### Arquitetura do projeto
+### Arquitetura do projeto - Serverest.jmx
 
 ```
 🧪 TestPlan
@@ -179,6 +179,18 @@ Devemos também copiar o header da página, assim como fizemos para *Acesso*.
 ![image](https://user-images.githubusercontent.com/3456363/161607068-4e9d5f1f-5428-4137-a3af-9951c45277ff.png)
 
 ## Testando o ViaCEP
+
+### Arquitetura do projeto - ViaCEP.jmx
+
+```
+🧪 TestPlan
+ └── 📊 View Results Tree
+ └── 📊 Aggregate Report
+       ├─ ⚙️ ViaCEP (Thread Group)
+           └─ 🥍 Consulta de CEP (HTTP Request)
+```
+
+-----------------------------------------
 
 1) Crie um novo teste (Thread Group), informando *Number of Threads* = 20, e um *Ramp-up* = 10.
 
