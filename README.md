@@ -35,6 +35,17 @@ Descompacte em `C:\`, acessar `C:\apache-jmeter-5.3\apache-jmeter-5.3\lib` e exe
 
 para que o novo plugin seja listado, feche o Jmeter e abra novamente (acesse no botão "cocar" no canto superior direito).
 
+## Testes de performance
+*“A eficiência da performance (ou simplesmente desempenho) é uma parte essencial de fornecer uma boa experiência aos usuários quando eles usam seus aplicativos em uma variedade de plataformas fixas e móveis.”* (CTFL-PT Performance Testing – 2018br)
+
+É bom conhecer a arquitetura que estamos inseridos para sabermos onde interferir e onde pode ser o gargalo. Pode ser utilizado cache para melhora do tempo da página.
+
+* O teste de **carga** avalia a estabilidade no sistema, quando é aplicado níveis crescentes de carga na aplicação.
+* No teste de **estresse**, o número de usuários vai sendo aumentado gradativamente, não é tudo de uma vez.
+* O teste de **pico** é mais utilizado quando há promoções repentinas, que geram picos de acesso repentinos (notificações push, e-mail marketing...).
+* O teste de **resistência** avalia o uso prolongado do sistema. É utilizado para avaliar questões de uso de memória, disco. Executa com um percentual um pouco abaixo do previsto para o sistema, mas por um longo período (dias ou até semana), não é um teste tão comum.
+* O teste de **escalabilidade** é executado junto com o teste de estresse, tem um aumento rápido da rampa, seu foco é observar as configurações de infra estrutura (percentual de uso da CPU).
+
 ## Cenário de teste
 *botão direito em Test Plan > Add > Threads (Users) > Thread Group*
 
@@ -42,7 +53,7 @@ Dentro deste cenário vamos adicionar as requisições dos cenários a serem exe
 Aqui também temos condições de controle para a execução destas requests.
 
 - **Number of Threads (users)**: é o número de VUs que você quer no teste.
-- **Ramp-up period (seconds)**: é o período em segundos da rampa de usuários vai subindo. Exemplo: se tivermos 100 usuários e 10 segundos, a cada 5 segundos a rampa vai subir 50 usuários.
+- **Ramp-up period (seconds)**: é o período em segundos da rampa de usuários vai subindo. A rampa é o número de usuários que vão sendo inseridos no sistema ao longo do tempo. Exemplo: se tivermos 100 usuários e 10 segundos, a cada 5 segundos a rampa vai subir 50 usuários.
 - **Loop Count**: quando acaba uma thread e sobe outra, se quero que minhas threads sejam executadas de forma infinita, marco a opção "Infinite" e deixa o campo em branco. A partir do momento que quero que entra uma thread e ela caia, eu deixo 1 no campo.
 - **Same user on each interation**: indica se deseja utilizar o mesmo usuário em cada iteração.
 - **Delay Thread creation until needed**: define um delay entre cada iteração.
@@ -189,4 +200,43 @@ Path = ws/01001000/json/
 
 6) Execute o teste.
 
-01:10
+![image](https://user-images.githubusercontent.com/3456363/162188819-9eb0337d-ddc8-4eca-8ffc-86ced7ad3b3c.png)
+
+
+
+## Cálculo de valores para o JMeter
+
+Os valores podem ser obtidos de duas formas:
+
+1) Calculando a média dos acessos nos dias desejados, e simular para 1 hora de execução
+
+2) Calculando a simulação do pico em 1h:
+
+**Exemplos:**
+```
+(número máximo de requisições / 24h) / 60min = requisições por minuto (throughput)
+8849 / 24 = 368 requisições/hora
+368 / 60 = 6,14 requisições/minuto
+```
+
+```
+600s = 10min
+
+1 usuário virtual (VU) consegue fazer 3,72 requisições em 10min
+
+100 usuários fazem 3,72 requisições, em 1h (3600 segundos)
+100 * 3,72 * 3600 = hits/tempo de 1339200 hits/tempo
+```
+
+**Observação**: todos os valores tem sempre que estar na mesma base decimal para o cálculo dar certo.
+
+## Links úteis para testar performance
+
+https://reqres.in/
+https://epic.gsfc.nasa.gov/about/api  
+https://swapi.dev/
+https://explore.postman.com/  
+https://developer.marvel.com/
+https://pokeapi.co/
+https://rapidapi.com/
+
