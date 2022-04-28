@@ -29,6 +29,8 @@ Este script efetua alguns testes de performance nas APIs de teste dos sites [Ser
 
 Descompacte em `C:\`, acessar `C:\apache-jmeter-5.3\apache-jmeter-5.3\bin` e execute **jmeter.bat**.
 
+O JMeter é uma ferramenta desenvolvida em Java. Por esse motivo, é necessário que sua máquina tenha o **Java SE Development Kit 8 (JDK)** instalado. Baixe [neste link](https://www.oracle.com/java/technologies/downloads/).
+
 **Plugins:** acesse o [site de plugins do JMeter](https://jmeter-plugins.org/),baixe o plugin desejado e coloque o arquivo `.jar` dentro da pasta `lib`, e também na pasta `lib > ext` do JMeter. Para que o novo plugin seja listado, feche o Jmeter e abra novamente (acesse no botão "cocar" no canto superior direito).
 
 **Blazemeter:** instalar a extensão Blazementer no Chome, [acessar este site](https://auth.blazemeter.com/auth/realms/blazect/protocol/saml/clients/blazemeter) e se cadastrar/fazer login.
