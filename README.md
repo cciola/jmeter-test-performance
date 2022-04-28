@@ -27,7 +27,7 @@ Este script efetua alguns testes de performance nas APIs de teste dos sites [Ser
 
 ![image](https://user-images.githubusercontent.com/3456363/161556522-f16aa87d-0ab8-43c0-8a0d-8995ed9c4a44.png)
 
-Descompacte em `C:\`, acessar `C:\apache-jmeter-5.3\apache-jmeter-5.3\lib` e execute **jmeter.bat**:
+Descompacte em `C:\`, acessar `C:\apache-jmeter-5.3\apache-jmeter-5.3\bin` e execute **jmeter.bat**.
 
 **Plugins:** acesse o [site de plugins do JMeter](https://jmeter-plugins.org/),baixe o plugin desejado e coloque o arquivo `.jar` dentro da pasta `lib`, e também na pasta `lib > ext` do JMeter. Para que o novo plugin seja listado, feche o Jmeter e abra novamente (acesse no botão "cocar" no canto superior direito).
 
