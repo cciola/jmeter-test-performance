@@ -290,9 +290,9 @@ Vamos configurar para agrupar as execuções, marcando a opção *Generate paren
 ## Links úteis para testar performance
 
 - https://reqres.in/
-- https://epic.gsfc.nasa.gov/about/api  
+- https://epic.gsfc.nasa.gov/about/api
 - https://swapi.dev/
-- https://explore.postman.com/  
+- https://explore.postman.com/
 - https://developer.marvel.com/
 - https://pokeapi.co/
 - https://rapidapi.com/
